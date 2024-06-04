@@ -48,7 +48,7 @@ using OMEinsum, LuxorTensorPlot
 
 simple_ecode = ein"(ab, ica), bde, cjfdlm, eg, gfk -> ijklm"
 simple_path = joinpath(@__DIR__ , "figs/simple_hypergraph.png")
-show_hypergraph(simple_ecode, filename = simple_path)
+show_tensornetwork(simple_ecode, filename = simple_path)
 ```
 
 The result figure is shown below
@@ -60,7 +60,7 @@ using OMEinsum, LuxorTensorPlot
 
 complex_ecode = readjson(joinpath(@__DIR__ , "qc50.json")).eins
 complex_path = joinpath(@__DIR__ , "figs/complex_hypergraph.png")
-show_hypergraph(complex_ecode, filename = complex_path)
+show_tensornetwork(complex_ecode, filename = complex_path)
 ```
 
 ![](example/figs/complex_tensornetwork.png)
