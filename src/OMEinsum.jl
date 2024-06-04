@@ -20,8 +20,8 @@ function ein2hypergraph(ec::AbstractEinsum)
     return LabeledHyperGraph(adj, el = edges, oe = open_edges)
 end
 
-function LuxorGraphPlot.show_graph(ec::AbstractEinsum; locs=Layout(:stress), kwargs...)
+function show_hypergraph(ec::AbstractEinsum; locs=Layout(:stress), filename = nothing, kwargs...)
     tng = TensorNetworkGraph(ein2hypergraph(ec))
     gviz = GraphViz(tng, locs; kwargs...)
-    return show_graph(gviz)
+    return show_graph(gviz, filename = filename)
 end

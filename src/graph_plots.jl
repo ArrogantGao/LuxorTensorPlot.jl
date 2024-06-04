@@ -37,13 +37,13 @@ function _get_key(dict::Dict, value)
     @error "Value not found in dictionary"
 end
 
-function LuxorGraphPlot.show_graph(tng::TensorNetworkGraph, locs=Layout(:stress); kwargs...)
+function LuxorGraphPlot.show_graph(tng::TensorNetworkGraph, locs=Layout(:stress); filename = nothing, kwargs...)
     gviz = GraphViz(tng, locs; kwargs...)
-    return show_graph(gviz)
+    return show_graph(gviz, filename = filename)
 end
 
-function LuxorGraphPlot.show_graph(adj::SparseMatrixCSC; vl::Vector = [1:size(adj, 1)...], el::Vector = [1:size(adj, 2)...], oe::Vector = [])
+function show_hypergraph(adj::SparseMatrixCSC, locs=Layout(:stress); vl::Vector = [1:size(adj, 1)...], el::Vector = [1:size(adj, 2)...], oe::Vector = [], filename = nothing, kwargs...)
     lhg = LabeledHyperGraph(adj; vl=vl, el=el, oe=oe)
     tng = TensorNetworkGraph(lhg)
-    return show_graph(tng)
+    return show_graph(tng, locs; filename = filename, kwargs...)
 end
