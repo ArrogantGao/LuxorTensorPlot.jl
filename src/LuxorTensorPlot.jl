@@ -3,7 +3,8 @@ module LuxorTensorPlot
 using Graphs, SparseArrays
 using Luxor, LuxorGraphPlot
 
-export show_hypergraph
+export adjacency_mat
+export show_hypergraph, show_tensornetwork
 
 include("hypergraph.jl")
 include("OMEinsum.jl")

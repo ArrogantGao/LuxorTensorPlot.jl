@@ -1,6 +1,6 @@
-using LuxorTensorPlot
+using LuxorTensorPlot, Graphs, SparseArrays, Luxor
 using Test
 
 @testset "LuxorTensorPlot.jl" begin
-    # Write your tests here.
+    include("hypergraph.jl")
 end
