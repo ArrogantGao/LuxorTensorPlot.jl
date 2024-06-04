@@ -8,7 +8,7 @@
 
 `LuxorTensorPlot.jl` is a package based on `LuxorGraphPlot.jl` to plot tensor networks as hypergraphs, where the tensors are represented as nodes and the indices are represented as hyper-edges. The package is designed to be compatible with `OMEinsum.jl`.
 
-The tensors are represented as big white nodes, and the indices are represented as small red nodes, and if the indices are open, they are represented as small green nodes.
+In this package, the tensors are represented as big white nodes, and the indices are represented as small red nodes, and if the indices are open, they are represented as small green nodes.
 
 ## Installation
 
@@ -35,9 +35,9 @@ graph_path = joinpath(@__DIR__ , "figs/simple_graph.png")
 show_hypergraph(adj, filename = graph_path)
 ```
 
-The result figure is shown below
-![](example/figs/simple_graph.png)
+The result figure is shown below:
 
+![](example/figs/simple_graph.png)
 
 
 ### Tensor Networks
@@ -51,7 +51,8 @@ simple_path = joinpath(@__DIR__ , "figs/simple_hypergraph.png")
 show_tensornetwork(simple_ecode, filename = simple_path)
 ```
 
-The result figure is shown below
+The result figure is shown below:
+
 ![](example/figs/simple_tensornetwork.png)
 
 It is also possible to use an eincode load from files
